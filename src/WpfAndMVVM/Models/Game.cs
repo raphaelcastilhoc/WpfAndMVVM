@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Windows.Media;
 
 namespace WpfAndMVVM.Models
 {
     public class Game
     {
         private Game() { }
+
+        public Game(int id)
+        {
+            Id = id;
+        }
 
         public Game(string title,
             GameGenre genre,
@@ -19,11 +25,20 @@ namespace WpfAndMVVM.Models
 
         public int Id { get; }
 
-        public string Title { get; }
+        public string Title { get; private set; }
 
-        public GameGenre Genre { get; }
+        public GameGenre Genre { get; private set; }
 
-        public DateTime ReleaseDate { get; }
+        public DateTime ReleaseDate { get; private set; }
+
+        public void Edit(string title,
+            GameGenre genre,
+            DateTime releaseDate)
+        {
+            Title = title;
+            Genre = genre;
+            ReleaseDate = releaseDate;
+        }
     }
 
     public enum GameGenre

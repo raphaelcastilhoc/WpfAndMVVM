@@ -13,8 +13,8 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <Button Margin="3" Padding="3" Content="Add" CommandParameter="{Binding}" Command="{Binding AddCommand}" Style="{StaticResource ActionButtonTheme}" />
-            <Button Margin="3" Padding="3" Content="Edit" CommandParameter="{Binding}" Command="{Binding Edit}" Style="{StaticResource ActionButtonTheme}" />
-            <Button Margin="3" Padding="3" Content="Delete" CommandParameter="{Binding}" Command="{Binding Delete}" Style="{StaticResource ActionButtonTheme}" />
+            <Button Margin="3" Padding="3" Content="Edit" CommandParameter="{Binding}" Command="{Binding EditCommand}" Style="{StaticResource ActionButtonTheme}" />
+            <Button Margin="3" Padding="3" Content="Delete" CommandParameter="{Binding}" Command="{Binding DeleteCommand}" Style="{StaticResource ActionButtonTheme}" />
         </StackPanel>
         <ScrollViewer Grid.Row="1"
                       VerticalScrollBarVisibility="Visible">
@@ -22,8 +22,9 @@
                       ItemsSource="{Binding Games}"
                       SelectedItem="{Binding SelectedGame}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Id}"/>
-                    <DataGridTextColumn FontSize="15" Header="Title" Binding="{Binding Title}"/>
+                    <DataGridTextColumn MinWidth="40" FontSize="15" Header="Title" Binding="{Binding Title}"/>
+                    <DataGridTextColumn MinWidth="50" FontSize="15" Header="Genre" Binding="{Binding Genre}"/>
+                    <DataGridTextColumn MinWidth="40" FontSize="15" Header="Release Date" Binding="{Binding ReleaseDate}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
