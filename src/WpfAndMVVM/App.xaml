@@ -1,0 +1,24 @@
+﻿<Application x:Class="WpfAndMVVM.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfAndMVVM"
+             xmlns:viewModel="clr-namespace:WpfAndMVVM.ViewModels"
+             xmlns:view="clr-namespace:WpfAndMVVM.Views">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ActionButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/DataGridTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:GameViewModel}">
+                <view:GameView />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
